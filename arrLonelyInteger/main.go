@@ -44,6 +44,8 @@ func LonelyInteger(array []int32) int32 {
 		if v == 1 {
 			s, _ := strconv.Atoi(k)
 			ans = int32(s)
+		} else {
+			ans = -1
 		}
 	}
 
