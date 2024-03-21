@@ -16,12 +16,13 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 func main() {
 	nums := []int{0, 0, 1, 1, 1, 2, 2, 3, 3, 4}
 
+	fmt.Println(len(nums), "<-- before loop")
 	for i := 1; i < len(nums); i++ {
 		if nums[i-1] == nums[i] {
 			nums = append(nums[:i], nums[i+1:]...)
 			i--
 		}
 	}
-
+	fmt.Println(len(nums), "<-- after loop")
 	fmt.Println(nums)
 }
