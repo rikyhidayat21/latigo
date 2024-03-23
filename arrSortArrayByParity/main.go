@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /* Soal Leet Code
 * Given an integer array nums, move all the even integers at the beginning of the array followed by all the odd integers.
 
@@ -11,5 +13,21 @@ Explanation: The outputs [4,2,3,1], [2,4,1,3], and [4,2,1,3] would also be accep
 *
 * */
 
-// TODO: please work on this using in-place
-func main() {}
+func main() {
+	nums := []int{3, 1, 2, 4}
+	tempVar := 0
+	counterOddElement := 0
+	for i := 0; i < len(nums); i++ {
+		if i == len(nums)-counterOddElement {
+			break
+		}
+		if nums[i]%2 != 0 {
+			tempVar = nums[i]
+			nums = append(nums[:i], nums[i+1:]...)
+			counterOddElement++
+			nums = append(nums, tempVar)
+			i--
+		}
+	}
+	fmt.Println(nums)
+}
