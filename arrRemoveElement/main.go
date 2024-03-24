@@ -14,6 +14,7 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 *
 * */
 
+// this will apply remove element in-place
 func main() {
 	nums := []int{3, 2, 2, 3}
 	val := 3
